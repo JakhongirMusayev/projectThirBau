@@ -47,7 +47,7 @@ gulp.task('server', () => {
 		server: {
 			baseDir: './build'
 		},
-		open: false
+		// open: false
 		// browserni qayta-qayta ochmaslik uchun
 		// browser 1 marta ochilgach ishlatiladi.
 	});
@@ -56,6 +56,9 @@ gulp.task('server', () => {
 
 gulp.watch('./src/pug/**/*.pug', gulp.series('pug'));
 gulp.watch('./src/styles/**/*.scss', gulp.series('styles'));
+gulp.watch('./src/images/**/*.*', gulp.series('copy:images'));
+gulp.watch('./src/fonts/**/*.*', gulp.series('copy:fonts'));
+
 gulp.task('default', gulp.series('clean', gulp.parallel('pug', 'styles', 'copy:fonts', 'copy:images'), 'server'));
 
 

@@ -1,4 +1,8 @@
 $main-color: #cf0000;
 
-@import './blocks/header.scss';
-@import './blocks/footer.scss';
+@import './a_header.scss';
+@import './b_aside.scss';
+@import './c_main-top.scss';
+@import './d_main-bottom.scss';
+@import './e_footer-top.scss';
+@import './f_footer-bottom.scss';
