@@ -6,3 +6,15 @@ $main-color: #cf0000;
 @import './d_main-bottom.scss';
 @import './e_footer-top.scss';
 @import './f_footer-bottom.scss';
+
+header {
+	background-color: #ccc;
+}
+
+main {
+	background-color: #ddd;
+}
+
+footer {
+	background-color: #eee;
+}

@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-html(lang="en")
-	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title Document
-		link(rel="stylesheet", href="main.css")
-	body
-		img(src="./images/img/bolga-png.png", alt="rasm")
-		.flex-box
-			h2 Hello
-			h3 Hello
-			h4 Hello
+extends layouts/layout.pug
+
+block header
+	include header/header-top.pug
+	include header/header-middle.pug
+	include header/header-bottom.pug
+
+block main-top
+	include main/main-top/aside.pug
+	include main/main-top/main-content.pug
+block main-bottom
+	include main/main-bottom/main-bottom.pug
+
+block footer
+	include footer/footer-top.pug
+	include footer/footer-bottom.pug
