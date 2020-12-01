@@ -3,7 +3,7 @@ const rm = require('gulp-rm');
 const pug = require('gulp-pug')
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
-const reload = browserSync.reload; // automatic qayta yuklash uchun-1
+// const reload = browserSync.reload; // automatic qayta yuklash uchun-1
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -17,7 +17,7 @@ gulp.task('pug', () => {
 	return gulp.src('src/pug/index.pug')
 		.pipe(pug({ pretty: true }))
 		.pipe(gulp.dest('build'))
-		.pipe(reload({ stream: true })); // automatic qayta yuklash uchun-2
+		.pipe(browserSync.reload({ stream: true })); // automatic qayta yuklash uchun-2
 });
 gulp.task('styles', () => {
 	return gulp.src('src/styles/main.scss')
@@ -29,7 +29,7 @@ gulp.task('styles', () => {
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build'))
-		.pipe(reload({ stream: true })); // automatic qayta yuklash uchun-2
+		.pipe(browserSync.reload({ stream: true })); // automatic qayta yuklash uchun-2
 });
 
 gulp.task('copy:images', () => {
@@ -54,10 +54,13 @@ gulp.task('server', () => {
 });
 
 
-gulp.watch('./src/pug/**/*.pug', gulp.series('pug'));
-gulp.watch('./src/styles/**/*.scss', gulp.series('styles'));
-gulp.watch('./src/images/**/*.*', gulp.series('copy:images'));
-gulp.watch('./src/fonts/**/*.*', gulp.series('copy:fonts'));
+gulp.watch('./src/pug/**/*.pug', gulp.parallel('pug'));
+gulp.watch('./src/styles/**/*.scss', gulp.parallel('styles'));
+// gulp.watch('./src/styles/**/*.scss', function () {
+// 	setTimeout(gulp.parallel('styles'), 1000);
+// });
+gulp.watch('./src/images/**/*.*', gulp.parallel('copy:images'));
+gulp.watch('./src/fonts/**/*.*', gulp.parallel('copy:fonts'));
 
 gulp.task('default', gulp.series('clean', gulp.parallel('pug', 'styles', 'copy:fonts', 'copy:images'), 'server'));
 

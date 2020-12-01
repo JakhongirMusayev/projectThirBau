@@ -1,20 +1,8 @@
-$main-color: #cf0000;
-
-@import './a_header.scss';
-@import './b_aside.scss';
-@import './c_main-top.scss';
-@import './d_main-bottom.scss';
-@import './e_footer-top.scss';
-@import './f_footer-bottom.scss';
-
-header {
-	background-color: #ccc;
-}
-
-main {
-	background-color: #ddd;
-}
-
-footer {
-	background-color: #eee;
-}
+@import "header/header-top";
+@import "header/header-middle";
+@import "header/header-bottom";
+@import "main/aside";
+@import "main/content";
+@import "main/bottom";
+@import "footer/footer-top";
+@import "footer/footer-bottom";
