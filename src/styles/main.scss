@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  font-size: 14px;
+  font-family: "Proxima Nova Rg";
+  color: #1c1b1a;
+}
+
 @import "header/header-top";
 @import "header/header-middle";
 @import "header/header-bottom";

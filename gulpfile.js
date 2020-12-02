@@ -53,7 +53,13 @@ gulp.task('server', () => {
 	});
 });
 
-
+gulp.watch(
+	[
+		'./build/index.html',
+		'./build/main.css'
+	],
+	gulp.parallel(browserSync.reload)
+);
 gulp.watch('./src/pug/**/*.pug', gulp.parallel('pug'));
 gulp.watch('./src/styles/**/*.scss', gulp.parallel('styles'));
 // gulp.watch('./src/styles/**/*.scss', function () {

@@ -1,5 +1,37 @@
 extends ../layouts/layout.pug
 
 block header
-	header-top
-		h3 Hello from header-top top
+	.header-top
+		.header-top__container
+			ul
+				li 
+					a(href="#") Строительные центры
+				li 
+					a(href="#") Доставка и подъем
+				li 
+					a(href="#") Возврат
+				li 
+					a(href="#") Все услуги
+				li
+				li 
+					a.signin(href="#") Вход
+				li
+					a.login(href="#") Регистрация
+				//- Burger-menu. Olindi: https://habr.com/ru/post/320668/
+			nav.nav
+				input#showmenu.nav__check(type='checkbox')
+				label.nav__showmenu(for='showmenu') ☰
+				label.nav__back(for='showmenu')
+				ul.menu
+					li
+						a.menu__item(href='#') Строительные центры
+					li
+						a.menu__item(href='#') Доставка и подъем
+					li
+						a.menu__item(href='#') Возврат
+					li
+						a.menu__item(href='#') Все услуги
+					li
+						a.menu__item(href='#') Вход
+					li
+						a.menu__item(href="#") Регистрация
