@@ -9,6 +9,19 @@
   color: #1c1b1a;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 @import "header/header-top";
 @import "header/header-middle";
 @import "header/header-bottom";

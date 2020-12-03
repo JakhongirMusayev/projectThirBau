@@ -2,4 +2,19 @@ extends ../layouts/layout.pug
 
 block header
 	.header-middle
-		//- h3 Hello from header-middle middle
+		.header-middle__container
+			.header-middle__logo
+				a(href="#")
+					img(src="../../images/logo.png", alt="Baulife-logo")
+			.header-middle__search
+				form(action="#")
+					input(type="search" placeholder="Поиск товаров")
+					input(type="submit" value="Искать")
+			.header-middle__contacts
+				p.operating-mode
+					| Без выходных с 9 до 19ч
+				a(href="tel:3812-505-977") (3812)
+					span 505-977
+				p.callback
+					a(href="#") Заказать звонок
+					

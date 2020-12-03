@@ -1,119 +1,142 @@
 .header-top {
-  width: 100%;
-  background-color: #30302e;
+	width: 100%;
+	background-color: #30302e;
 
-  .header-top__container {
-    width: 83.5%;
-    margin: 0 auto;
+	.header-top__container {
+		width: 83.5%;
+		margin: 0 auto;
+		// @mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+		@media screen and (max-width: 768px) {
+			// width: 100%;
+			display: flex; // .header-middle__logo-hiddens uchun
+			// flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
 
-    @media screen and (max-width: 768px) {
-      width: 100%;
-    }
+		ul {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			display: flex;
+			// @mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+			@media screen and (max-width: 785px) {
+				justify-content: space-around;
+			}
 
-    ul {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      display: flex;
+			li {
+				list-style: none;
+				&:nth-child(-n + 3) {
+					margin-right: 37px;
+				}
+				&:nth-child(5) {
+					flex: 1;
+				}
+				&:nth-child(6)::after {
+					content: " //";
+					color: yellow;
+					margin-right: 3px;
+				}
+				// @mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+				@media screen and (max-width: 785px) {
+					&:nth-child(-n + 4) {
+						margin-right: 0;
+					}
+					&:empty {
+						flex: 0;
+						display: none;
+					}
+					&:nth-child(6)::after {
+						content: "";
+						margin-right: 0;
+					}
+					.signin,
+					.login {
+						color: yellow;
+					}
+				}
 
-      @media screen and (max-width: 785px) {
-        justify-content: space-around;
-      }
+				a {
+					text-decoration: none;
+					color: #e3e3e3;
+				}
+			}
+		}
+		// * ul bilan nav biri yoqilganda ikkinchisi o'chadi
+		.nav {
+			display: none;
+		}
+		// @mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+		@media screen and (max-width: 768px) {
+			// Eski ro'yxatni yo'qotish
+			ul {
+				display: none;
+			}
+			//- Burger-menu. Olindi: https://habr.com/ru/post/320668/
+			.nav {
+				display: block;
 
-      li {
-        list-style: none;
-        &:nth-child(-n + 3) {
-          margin-right: 37px;
-        }
-        &:nth-child(5) {
-          flex: 1;
-        }
-        &:nth-child(6)::after {
-          content: " //";
-          color: yellow;
-          margin-right: 3px;
-        }
-
-        @media screen and (max-width: 785px) {
-          &:nth-child(-n + 4) {
-            margin-right: 0;
-          }
-          &:empty {
-            flex: 0;
-            display: none;
-          }
-          &:nth-child(6)::after {
-            content: "";
-            margin-right: 0;
-          }
-          .signin,
-          .login {
-            color: yellow;
-          }
-        }
-
-        a {
-          text-decoration: none;
-          color: #e3e3e3;
-        }
-      }
-    }
-    //  ul bilan nav biri yoqilganda ikkinchisi o'chadi
-    .nav {
-      display: none;
-    }
-
-    @media screen and (max-width: 768px) {
-      ul {
-        display: none;
-      }
-      //- Burger-menu. Olindi: https://habr.com/ru/post/320668/
-      .nav {
-        display: block;
-        input {
-          display: none;
-        }
-        label {
-          cursor: pointer;
-        }
-        .nav {
-          user-select: none;
-        }
-        .nav__showmenu {
-          position: relative;
-          z-index: 3;
-          display: inline-block;
-          margin-left: 10px;
-          padding: 0 5px 5px 5px;
-          top: 2px;
-          font-size: 27px;
-          color: yellow;
-        }
-        .menu {
-          position: fixed;
-          top: 6.5%;
-          bottom: 0;
-          display: block;
-          width: 220px;
-          text-transform: uppercase;
-          line-height: 2em;
-          background-color: #30302e;
-          transform: translateX(-100%);
-          transition: transform 0.3s;
-        }
-        .menu__item {
-          display: block;
-          text-align: center;
-          text-decoration: none;
-          color: gold;
-        }
-        .menu__item:hover,
-        .nav__showmenu:hover {
-          opacity: 0.5;
-        }
-        .nav__check:checked ~ .menu {
-          transform: translateX(0);
-        }
-      }
-    }
-  }
+				input {
+					display: none;
+				}
+				label {
+					cursor: pointer;
+				}
+				.nav {
+					user-select: none;
+				}
+				.nav__showmenu {
+					position: relative;
+					z-index: 3;
+					display: inline-block;
+					// margin-left: 5px;
+					padding: 0 5px 5px 5px;
+					top: 2px;
+					font-size: 27px;
+					color: yellow;
+				}
+				.menu {
+					position: fixed;
+					top: 6.5%;
+					left: 0;
+					bottom: 0;
+					display: block;
+					width: 220px;
+					text-transform: uppercase;
+					line-height: 2em;
+					background-color: #30302e;
+					transform: translateX(-100%);
+					transition: transform 0.3s;
+				}
+				.menu__item {
+					display: block;
+					text-align: center;
+					text-decoration: none;
+					color: gold;
+				}
+				.menu__item:hover,
+				.nav__showmenu:hover {
+					opacity: 0.5;
+				}
+				.nav__check:checked ~ .menu {
+					transform: translateX(0);
+				}
+			}
+		}
+		// *header-middledagi contacs
+		.header-middle__logo-hiddens {
+			display: none;
+			// @mmmmmmmmmmmmmmmmmmmmmmmmmmmm
+			@media (max-width: 768px) {
+				display: inline-block;
+				a {
+					img {
+						width: 50%;
+						margin-left: 47%;
+					}
+				}
+				// display: flex;
+				// align-items: center;
+			}
+		}
+	}
 }
