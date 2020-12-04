@@ -7,9 +7,7 @@
 		margin: 0 auto;
 		// @mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
 		@media screen and (max-width: 768px) {
-			// width: 100%;
 			display: flex; // .header-middle__logo-hiddens uchun
-			// flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
 		}
@@ -88,7 +86,6 @@
 					position: relative;
 					z-index: 3;
 					display: inline-block;
-					// margin-left: 5px;
 					padding: 0 5px 5px 5px;
 					top: 2px;
 					font-size: 27px;
@@ -123,7 +120,7 @@
 			}
 		}
 		// *header-middledagi contacs
-		.header-middle__logo-hiddens {
+		.header-middle__logo-hiddenes {
 			display: none;
 			// @mmmmmmmmmmmmmmmmmmmmmmmmmmmm
 			@media (max-width: 768px) {
